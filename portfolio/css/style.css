@@ -854,6 +854,11 @@ body {
     margin: 10px 4px 0 0;
     font-size: 0.875em;
 }
+#page2 .inner .port_list .port_list_item .info .company_txt a:hover{
+    background-color: #000;
+    color: #fff;
+    transition: 0.4s;
+}
 #page2 .inner .port_list .port_list_item .info .company_txt a i{
     display: inline-block;
     font-size: 0.875em;
