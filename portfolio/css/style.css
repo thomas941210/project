@@ -433,6 +433,9 @@ body {
 	#profile_list li span {
 		display: none;
 	}
+    #start .motion_text {
+        bottom: 82px;
+    }
 }
 
 /*header*/
@@ -620,7 +623,8 @@ body {
         margin-bottom: 30px;
     }
     .desc .right .skills > ul > li span{
-        width: 26%;
+        font-size: 0.875em;
+        width: 34%;
     }
 
 }
@@ -633,7 +637,10 @@ body {
     }
     .desc{
         flex-direction: column;
-        padding-left: 100px;
+        padding-left: 20px;
+    }
+    .desc .right .skills > ul > li .skill_txt {
+        font-size: 0.75em;
     }
     .desc .right{
         width: 100%;
@@ -644,7 +651,7 @@ body {
         padding-bottom: 50px;
     }
     .desc .left ul li strong{
-        width: 10%;
+        width: 20%;
     }
 }
 @media only screen and (max-width: 460px) {
