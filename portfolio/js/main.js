@@ -134,25 +134,51 @@ $(function(){
 	
 
 	//tab 버튼 UI
-	let tabWidth=[];
-	let tabN=0;
-	let tabClickN=0;
-	let tabLeft;
+	let tabArray=[];
+	let tab1=0;
+	let tab2=0;
+	let tabLeft=30;
+	let tabTop;
+	let wint, winw, targety;
 
 	$(window).resize(function(){
 		tabLeft=$("#page2 .category .list").offset().left;
+		winw=$(window).width();
+
+		if(winw > 720){
+			tabTop=190;
+		}
+		else{
+			tabTop=230;
+		}
 	});
 
 	$(window).trigger("resize");
 
-	$("#page2 .category .list li").each(function(i){
-		tabWidth.push($(this).find("a").width());
+	$(window).scroll(function(){
+		wint=$(window).scrollTop();
+
+		if(wint > $("#page2").offset().top){
+			if($("#page2 .category").hasClass("fixed") == false){
+				$("#page2 .category").addClass("fixed");
+			}
+		}else{
+			if($("#page2 .category").hasClass("fixed") == true){
+				$("#page2 .category").removeClass("fixed");
+			}
+		}
 	});
 
-	let tabInteraction=() => {
+	$("#page2 .category .list li").eq(tab2).addClass("active");
+
+	$("#page2 .category .list li").each(function(i){
+		tabArray.push($(this).find("a span.pc").width());
+	});
+
+	function tabInteraction(){
 		$("#page2 .category .line").css({
-			left: $("#page2 .category .list li").eq(tabN).offset().left-tabLeft,
-			width: tabWidth[tabN]
+			left: $("#page2 .category .list li").eq(tab1).offset().left-tabLeft,
+			width: tabArray[tab1]
 		});
 	};
 
@@ -160,19 +186,27 @@ $(function(){
 
 	$("#page2 .category .list li").hover(
 		function(){
-			tabN=$(this).index();
+			tab1=$(this).index();
 			tabInteraction();
 		},
 		function(){
-			tabN=tabClickN;
+			tab1=tab2;
 			tabInteraction();
 		}
 	);
 	$("#page2 .category .list li").click(function(e){
 		e.preventDefault();
-		tabClickN=$(this).index();
+		tab2=$(this).index();
 
-		let targety=$(".port_list_item").eq(tabClickN).offset().top;
+		$("#page2 .category .list li").removeClass("active");
+		$("#page2 .category .list li").eq(tab2).addClass("active");
+
+		if(tab2 == 0){
+			targety=$(".portfolio_list li").eq(tab2).offset().top;
+		}
+		else{
+			targety=$(".portfolio_list li").eq(tab2).offset().top-tabTop;
+		}
 
 		$("html").animate({scrollTop: targety}, 600);
 	});
