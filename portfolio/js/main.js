@@ -251,10 +251,10 @@ $(function(){
 		//글씨색상 변경
 		if(pageN === 2 || pageN === 3){
             $('#header .header_inner .logo').addClass('color');
-			$("#header .header_inner .tab a .open img").attr("src","images/tab_open_black.png");
+			$("#header .header_inner .tab a .open img").attr("src","../portfolio/images/tab_open_black.png");
         }else{
             $('#header .header_inner .logo').removeClass('color');
-			$("#header .header_inner .tab a .open img").attr("src","images/tab_open.png");
+			$("#header .header_inner .tab a .open img").attr("src","../portfolio/images/tab_open.png");
         }
 	});
 
