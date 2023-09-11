@@ -201,6 +201,7 @@ body.fixed{
 	}
 	.top .top_inner{
 		padding: 6px 30px;
+        max-width: 720px;
 	}
     #total .tabs{
         display: block;
@@ -543,6 +544,8 @@ body.fixed{
     font-size: 2em;
 }
 #page3 .page3wrap .title p{
+    margin: 0 auto;
+    width: 58%;
     font-size: 0.875em;
     padding-top: 10px;
     color: #7f7f7f;
@@ -641,7 +644,7 @@ body.fixed{
         font-size: 2em;
     }
 	#page3 .page3wrap .title p{
-        width: 48%;
+        width: 58%;
         margin: 0 auto;
     }
     #page3 .page3wrap .content2 .desc-left h3 span,
@@ -654,7 +657,11 @@ body.fixed{
     }
     #page3 .page3wrap .content2 .desc-left,
     #page3 .page3wrap .content2 .desc-right{
-        top: 60px;
+        top: 64px;
+    }
+    #page3 .page3wrap .content2 .desc-right h3,
+    #page3 .page3wrap .content2 .desc-left h3 {
+        font-size: 0.875em;
     }
     #page3 .page3wrap .content2 ul li::after{
         display: none;
@@ -744,7 +751,7 @@ body.fixed{
 }
 @media only screen and (max-width: 460px) {
 	#page4 .page4wrap .title p{
-        width: 56%;
+        width: 58%;
         margin: 0 auto;
     }
     #page4 .content3 ul{
@@ -1061,7 +1068,7 @@ textarea{
 
 }
 #footer .top_btn.active{
-    right: 20px;
+    right: 30px;
 }
 @media only screen and (max-width: 940px) {
 	#footer .ft_inner .ft-left p span .hidden1{
